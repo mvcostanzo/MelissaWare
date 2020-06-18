@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using MelissaWare.Context;
 using MelissaWare.Entities;
 
+
 namespace MelissaWare.API.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class TeachersController : ControllerBase

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Cors;
 
 namespace MelissaWare.API
 {
@@ -33,6 +34,7 @@ namespace MelissaWare.API
 
             services.AddControllers();
             services.AddDbContext<MelissaWareDBContext>(optionsBuilder);
+            services.AddCors();
         }
 
         private void OptionBuilderMethod(DbContextOptionsBuilder options)
@@ -44,6 +46,8 @@ namespace MelissaWare.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -59,6 +63,8 @@ namespace MelissaWare.API
             {
                 endpoints.MapControllers();
             });
+
         }
+
     }
 }

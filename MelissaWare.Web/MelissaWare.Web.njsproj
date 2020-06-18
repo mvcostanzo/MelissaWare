@@ -36,6 +36,12 @@
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\plugins\bootstrap-vue.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\views\Teachers.vue">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
@@ -43,9 +49,15 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\styles\" />
+    <Folder Include="src\views\" />
+    <Folder Include="src\plugins\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
+    <Content Include="src\components\MenuBar.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\main.js" />
   </ItemGroup>
   <PropertyGroup>
